@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema
 
 
-const userSchema = new Schema({
+const UserSchema = new Schema({
     email: {
         type: String,
         requried: true,
@@ -12,17 +12,14 @@ const userSchema = new Schema({
     password: {
         type: String,
         required: true,
-        minlength: 5,
     },
     name: {
         type: String,
         required: true,
-        maxlength: 20
     },
     lastname: {
         type: String,
         required: true,
-        maxlength: 20
     },
     cart: {
         type: Array,
@@ -41,6 +38,8 @@ const userSchema = new Schema({
     }
 })
 
-const User = mongoose.model("user", userSchema);
+const User = mongoose.model("users", UserSchema);
+
+UserSchema.set("autoIndex", false);
 
 module.exports = User;
