@@ -20,6 +20,21 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 app.use(cookieParser());
 
+
+// Models
+const {
+    User
+} = require("./models/user");
+
+
+// <===========USERS=============>
+app.post('/api/users/register', (req, res) => {
+    res.status(200);
+})
+
+
+// <==============================>
+
 // Sever Setup
 const PORT = process.env.PORT || 3002;
 const server = http.createServer(app);
