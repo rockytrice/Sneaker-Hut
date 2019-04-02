@@ -132,10 +132,14 @@ router.get(
     }),
     (req, res) => {
         res.json({
+            isAdmin: req.user.role === 0 ? false : true,
             id: req.user.id,
             name: req.user.name,
             lastname: req.user.lastname,
             email: req.user.email,
+            role: req.user.role,
+            cart: req.user.cart,
+            history: req.user.history
         });
     }
 );

@@ -9,6 +9,8 @@ const app = express();
 const passport = require("passport");
 
 const users = require("./routes/api/users");
+const products = require("./routes/api/product");
+const brands = require("./routes/api/brands");
 
 // db config
 const db = require("./config/keys").mongoURI;
@@ -31,14 +33,10 @@ app.use(morgan("combined"));
 app.use(cors());
 
 
-
-
-
-
-
-
 // <============== Use Routes ================>
 app.use("/api/users", users)
+app.use("/api/products", products)
+app.use("/api/products", brands)
 
 
 // passport middleware
